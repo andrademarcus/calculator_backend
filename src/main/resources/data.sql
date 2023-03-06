@@ -1,0 +1,23 @@
+INSERT INTO `operation` (`id_operation`, `type`, `cost`)
+VALUES
+	(1, 'ADDITION', 1),
+	(2, 'SUBSTRACTION', 2),
+	(3, 'MULTIPLICATION', 2.5),
+	(4, 'DIVISION', 3),
+	(5, 'SQUARE_ROOT', 5),
+	(6, 'RANDOM_STRING', 4);
+
+INSERT INTO `user_info` (`id_user`, `username`, `name`, `password`, `status`)
+VALUES
+	(1, 'marcusandrade816@gmail.com', 'Marcus Andrade', '$2a$10$VcN1jjgEEmarV8WnAZdJD.0FOpYmdSTH5.I/WL0RpkpEQXXFE8Jgi', 1),
+	(2, 'contact@truenorth.co', 'TrueNorth', '$2a$10$VcN1jjgEEmarV8WnAZdJD.0FOpYmdSTH5.I/WL0RpkpEQXXFE8Jgi', 1),
+	(3, 'inactive@truenorth.co', 'TrueNorth', '$2a$10$VcN1jjgEEmarV8WnAZdJD.0FOpYmdSTH5.I/WL0RpkpEQXXFE8Jgi', 0);
+
+INSERT INTO `user_record` (`id_record`, `id_user`, `id_user_deleted`, `id_operation`, `amount`, `user_balance`, `operation_response`, `date_inserted`, `date_inserted_uts`, `date_deleted`, `date_deleted_uts`, `deleted`, `success`)
+VALUES
+	(93, 1, NULL, NULL, 0, 100, 'Initial balance', '2023-03-02 21:00:00', 1677790800, NULL, NULL, 0, 1),
+	(94, 2, NULL, NULL, 0, 100, 'Initial balance', '2023-03-02 21:00:00', 1677790800, NULL, NULL, 0, 1),
+	(95, 1, NULL, 1, 1, 99, '10.0', '2023-03-02 22:14:47', 1677795287, NULL, NULL, 0, 1);
+
+
+
