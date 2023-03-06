@@ -39,9 +39,7 @@ public class WebSecurityConfig {
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 				.and()
 				.authorizeRequests()
-                .antMatchers("/api/auth/**", "/docs/**","/h2-console/**")
-				.permitAll()
-				.antMatchers("/api/test/**")
+                .antMatchers("/api/auth/**", "/docs/**","/h2-console/**", "/")
 				.permitAll()
 				.anyRequest()
 

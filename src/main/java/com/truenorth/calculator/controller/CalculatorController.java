@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/v1/operations")
 public class CalculatorController {
 
     private final CalculatorService calculatorService;
@@ -34,7 +34,7 @@ public class CalculatorController {
     }
 
     @ResponseBody
-    @RequestMapping(method = RequestMethod.GET, value = "/v1/operations/all")
+    @RequestMapping(method = RequestMethod.GET, value = "/all")
     @Operation(summary = "Retrieve all operations", security = @SecurityRequirement(name = "bearer-token"))
     public Map<String, String> getOperations(Locale locale) {
 
@@ -50,7 +50,7 @@ public class CalculatorController {
     }
 
     @ResponseBody
-    @RequestMapping(method = RequestMethod.POST, value = "/v1/operations/calculator")
+    @RequestMapping(method = RequestMethod.POST, value = "/calculator")
     @Operation(summary = "Execute a operation", security = @SecurityRequirement(name = "bearer-token"))
     public OperationResponse calculator(@RequestBody @Valid OperationFormRequest operation,
                                         BindingResult errors) {
